@@ -13,8 +13,3 @@ Steps:
 
 
 test123456
-ee
-test1234eeaa
-dddㄷㄷ
-dfs
-fdgdfg니리ㅏㄴ어리
