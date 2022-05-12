@@ -17,7 +17,7 @@ pipeline {
                 echo '${env.BRANCH_NAME}'
                  sh 'rm -rf deploy'
                  echo 'prepare'
-                 git branch: "master", credentialsId: "GIT_ACCOUNT", url: 'https://github.com/zombie828/targetA'
+                 git credentialsId: "GIT_ACCOUNT", url: 'https://github.com/zombie828/targetA'
                  sh  'ls -al'
             }
         }
