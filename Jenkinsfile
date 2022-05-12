@@ -7,6 +7,7 @@ pipeline {
     }
     environment {
         S3_BUCKET_NAME = sh "date '+%Y%m%d%H%M'.zip"
+        MY_ENV = "${env.BRANCH_NAME}"
 
     }
 
@@ -14,10 +15,10 @@ pipeline {
 
         stage('prepare') {
             steps {
-                echo '${env.BRANCH_NAME}'
+                echo '${MY_ENV}'
                  sh 'rm -rf deploy'
                  echo 'prepare'
-                 git branch: "${env.BRANCH_NAME}", credentialsId: "GIT_ACCOUNT", url: 'https://github.com/zombie828/targetA'
+                git branch: "&{MY_ENV}", credentialsId: "GIT_ACCOUNT", url: 'https://github.com/zombie828/targetA'
                  sh  'ls -al'
             }
         }
