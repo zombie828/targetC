@@ -20,7 +20,7 @@ pipeline {
                  sh  'ls -al'
             }
         }
-    }
+   
 
         stage('Build') {
             steps {
