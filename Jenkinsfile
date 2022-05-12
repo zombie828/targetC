@@ -14,14 +14,13 @@ pipeline {
 
         stage('prepare') {
             steps {
-                 echo '${env.BRANCH_NAME}'
                  sh 'rm -rf deploy'
                  echo 'prepare'
                  git branch: "develop" credentialsId: "GIT_ACCOUNT", url: 'https://github.com/zombie828/targetA/tree/develop'
                  sh  'ls -al'
             }
         }
-
+    }
 
         stage('Build') {
             steps {
