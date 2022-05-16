@@ -54,7 +54,7 @@ pipeline {
                 dir('deploy') {
                     sh 'ls -al'
                     sh 'zip ${S3_BUCKET_NAME} ./*'
-                //    sh 'aws s3 cp ./*.zip s3://code-deploy-test3212'
+                    sh 'aws s3 cp ./*.zip s3://code-deploy-test3212'
                 }
                 // sh 'aws deploy create-deployment --application-name deploy-test --deployment-config-name test-config --deployment-group-name code-deploy-group --s3-location bucket=code-deploy-test3212,key=warbuildfile.zip,bundleType=zip'
 
