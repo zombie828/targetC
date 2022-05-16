@@ -3,7 +3,7 @@ os: linux #ec2에 배포하는 경우 필수 값이며, amazon linux를 사용�
 
 files:
   - source: /
-    destination: /home/ec2-user
+    destination: /home/jenkins/deploy
 
 hooks:
   BeforeInstall:
