@@ -7,7 +7,7 @@ pipeline {
     }
     environment {
         S3_BUCKET_NAME = sh "date '+%Y%m%d%H%M'.zip"
-        MY_ENV = "${env.BRANCH_NAME}"
+        MY_ENV = "'${env.BRANCH_NAME}'"
 
     }
 
