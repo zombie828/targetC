@@ -15,7 +15,7 @@ pipeline {
 
         stage('prepare') {
             steps {
-                 echo 'MY_ENV'
+                echo '${MY_ENV}'
                  sh 'rm -rf deploy'
                  echo 'prepare'
                  git credentialsId: "GIT_ACCOUNT", url: 'https://github.com/zombie828/targetA'
