@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Running ${env.BRANCH_NAME}"
-                withAWS([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
+                withAWS(credentials: 'DH_AWS', region: 'ap-northeast-2') {
 s3Upload(path:"${S3_BUCKET_NAME}", file:"pom.xml",bucket:'solnae-test')
 }
             }
