@@ -16,7 +16,8 @@ pipeline {
             steps {
                  sh 'rm -rf deploy'
                  echo 'prepare'
-                 git branch: "develop", credentialsId: "GIT_ACCOUNT", url: 'https://github.com/zombie828/targetA'
+                 echo '${env.BRANCH_NAME}'
+                 git branch: "${env.BRANCH_NAME}", credentialsId: "GIT_ACCOUNT", url: 'https://github.com/zombie828/targetA'
                  sh  'ls -al'
             }
         }
