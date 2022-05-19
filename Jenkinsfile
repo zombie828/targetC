@@ -5,10 +5,9 @@ pipeline {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "Maven3"
     }
-    environment {
+
       //  S3_BUCKET_NAME = sh "date '+%Y%m%d%H%M'.zip" 스크립트에서 변수 선언은 제한되어 있다 https://kwonnam.pe.kr/wiki/ci/jenkins/pipeline
 
-    }
 
     stages {
 
