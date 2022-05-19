@@ -6,7 +6,7 @@ pipeline {
         maven "Maven3"
     }
     environment {
-        S3_BUCKET_NAME = echo 'tttt.zip' //sh "date '+%Y%m%d%H%M'.zip"
+      //  S3_BUCKET_NAME = sh "date '+%Y%m%d%H%M'.zip" 스크립트에서 변수 선언은 제한되어 있다 https://kwonnam.pe.kr/wiki/ci/jenkins/pipeline
 
     }
 
@@ -53,10 +53,10 @@ pipeline {
 
                 dir('deploy') {
                     sh 'ls -al'
-                    sh 'zip "${S3_BUCKET_NAME}" ./*'
+                    sh 'zip "ttt.zip" ./*'
                    // sh 'aws s3 cp ./*.zip s3://code-deploy-test3212'
                     withAWS(credentials: 'DH_AWS', region: 'ap-northeast-2') {
-s3Upload(path:"${S3_BUCKET_NAME}", file:"pom.xml",bucket:'solnae-test')
+s3Upload(path:"ttt.zip", file:"pom.xml",bucket:'solnae-test')
 }
                 }
                 // sh 'aws deploy create-deployment --application-name deploy-test --deployment-config-name test-config --deployment-group-name code-deploy-group --s3-location bucket=code-deploy-test3212,key=warbuildfile.zip,bundleType=zip'
