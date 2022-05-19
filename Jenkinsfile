@@ -6,7 +6,7 @@ pipeline {
         maven "Maven3"
     }
     environment {
-        S3_BUCKET_NAME = sh "date '+%Y%m%d%H%M'.zip"
+        S3_BUCKET_NAME = echo 'tttt.zip' //sh "date '+%Y%m%d%H%M'.zip"
 
     }
 
