@@ -55,7 +55,7 @@ pipeline {
                     sh 'zip "ttt.zip" ./*'
                    // sh 'aws s3 cp ./*.zip s3://code-deploy-test3212'
                     withAWS(credentials: 'DH_AWS', region: 'ap-northeast-2') {
-s3Upload(path:"ttt.zip", file:"pom.xml",bucket:'solnae-test')
+s3Upload(file:"pom.xml",bucket:'solnae-test')
 }
                 }
                 // sh 'aws deploy create-deployment --application-name deploy-test --deployment-config-name test-config --deployment-group-name code-deploy-group --s3-location bucket=code-deploy-test3212,key=warbuildfile.zip,bundleType=zip'
