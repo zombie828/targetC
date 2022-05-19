@@ -53,7 +53,7 @@ pipeline {
 
                 dir('deploy') {
                     sh 'ls -al'
-                    sh 'zip ${S3_BUCKET_NAME} ./*'
+                    sh 'zip "${S3_BUCKET_NAME}" ./*'
                    // sh 'aws s3 cp ./*.zip s3://code-deploy-test3212'
                     withAWS(credentials: 'DH_AWS', region: 'ap-northeast-2') {
 s3Upload(path:"${S3_BUCKET_NAME}", file:"pom.xml",bucket:'solnae-test')
