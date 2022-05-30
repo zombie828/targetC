@@ -10,5 +10,4 @@ hooks:
     - location: remove_before.sh #BeforeInstall 생명주기에, 이전에 생성된 파일들을 제거하는 remove_before.sh를 실행합니다.
   AfterInstall:
     - location: kill_process.sh #ApplicationStop 생명주기에, kill_process.sh를 실행합니다
-  # ApplicationStart:
-  #   - location: run_process.sh #ApplicationStart 생명주기에, run_process.sh를 실행합니다.
+
